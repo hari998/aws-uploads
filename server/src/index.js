@@ -25,3 +25,8 @@ app.listen(PORT, function (err) {
   if (err) console.log(err);
   console.log("Server listening on PORT", PORT);
 });
+
+/**
+ * im able to attach and it works immediately but when detach , we have to restart our application code,
+ * after detaching machine still ablt to upload
+ */
