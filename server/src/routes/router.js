@@ -35,10 +35,11 @@ router.get("/test/fetch", async function (req, res) {
   try {
     let config = {
       url: "https://jsonplaceholder.typicode.com/todos/1",
+      // url: "http://localhost:3333",
       method: "GET",
       body: {},
     };
-    let resp = await postData(config);
+    let resp = await fetchData(config);
     res.status(200).json({ message: resp ?? "everything is fine" });
   } catch (error) {
     res
@@ -47,7 +48,7 @@ router.get("/test/fetch", async function (req, res) {
   }
 });
 
-async function postData(config) {
+async function fetchData(config) {
   let { url, method, data } = config;
   // Default options are marked with *
   const response = await fetch(url, {
